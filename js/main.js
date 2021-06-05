@@ -1,28 +1,17 @@
 const searchInput = document.querySelector("[name=item-name]");
 const title = document.querySelector(".searched-items");
-const cardsContainer = document.querySelector(".items-container");
-
 function formSubmitted(event) {
   event.preventDefault();
   const searchExpression = searchInput.value;
-  title.innerHTML = searchExpression + " item:";
+  title.innerHTML = searchExpression + " cards:";
   searchInput.value = "";
-  cardsContainer.innerHTML = "";
 
-  fetch(`https://pokeapi.co/api/v2/${searchExpression}`)
-    .then((x) => x.json())
-    .then((data) => {
-      let imageHtmlList = [];
-      for (let items of data.items) {
-        const url = ticker.imageUrl;
-        const name = ticker.name;
-        if (typeof url !== "undefined") {
-          imageHtmlList.push(`<img src="${url}" alt="${name}" />`);
-        }
-      }
-      const html = imageHtmlList.join("");
-      ticketsContainer.innerHTML = html;
-    });
+  fetch('https://pokeapi.co/api/v2/item/name=${item-name}/')
+  .then(x =>) x.json())
+  .then(data =>) {
+    const html = '<img src="$data.items[0].spritesUrl} alt="item sprite" />';
+    document.querySelector(".items-container").innerHTML = html;
+  });
 }
 
 document.querySelector("form").addEventListener("submit", formSubmitted);
