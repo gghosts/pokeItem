@@ -6,12 +6,12 @@ function formSubmitted(event) {
   title.innerHTML = searchExpression + " cards:";
   searchInput.value = "";
 
-  fetch('https://pokeapi.co/api/v2/item/name=${item-name}/')
-  .then(x =>) x.json())
-  .then(data =>) {
-    const html = '<img src="$data.items[0].spritesUrl}" alt="item sprite" />';
+  fetch('https://pokeapi.co/api/v2/item/?name=${searchExpression}')
+  .then(x => x.json())
+  .then(data => {
+    const html = '<img src="${Url}" alt="item sprite" />';
     document.querySelector(".items-container").innerHTML = html;
   });
-}
 
-document.querySelector("form").addEventListener("submit", formSubmitted);
+  document.querySelector("form").addEventListener("submit", formSubmitted);
+}
