@@ -9,7 +9,7 @@ function formSubmitted(event) {
   fetch('https://pokeapi.co/api/v2/item/name=${item-name}/')
   .then(x =>) x.json())
   .then(data =>) {
-    const html = '<img src="$data.items[0].spritesUrl} alt="item sprite" />';
+    const html = '<img src="$data.items[0].spritesUrl}" alt="item sprite" />';
     document.querySelector(".items-container").innerHTML = html;
   });
 }
