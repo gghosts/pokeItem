@@ -6,7 +6,7 @@ function formSubmitted(event) {
   title.innerHTML = searchExpression + " cards:";
   searchInput.value = "";
 
-  fetch('https://pokeapi.co/api/v2/item/?id=${searchExpression}')
+  fetch('https://pokeapi.co/api/v2/item/?id-${searchExpression}')
   .then(x => x.json())
   .then(data => {
     const html = '<img src="${Url}" alt="item sprite" />';
