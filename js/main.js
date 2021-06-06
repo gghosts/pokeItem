@@ -3,10 +3,10 @@ const title = document.querySelector(".searched-items");
 function formSubmitted(event) {
   event.preventDefault();
   const searchExpression = searchInput.value;
-  title.innerHTML = searchExpression + " cards:";
+  title.innerHTML = searchExpression + " item:";
   searchInput.value = "";
 
-  fetch('https://pokeapi.co/api/v2/item/?id-${searchExpression}')
+  fetch(`https://pokeapi.co/api/v2/item/?id-${searchExpression}`)
   .then(x => x.json())
   .then(data => {
     const html = '<img src="${Url}" alt="item sprite" />';
