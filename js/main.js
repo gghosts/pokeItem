@@ -1,4 +1,4 @@
-const searchInput = document.querySelector("[name=item-id]");
+const searchInput = document.querySelector("[name=id]");
 const title = document.querySelector(".searched-items");
 function formSubmitted(event) {
   event.preventDefault();
