@@ -4,21 +4,20 @@
 <head>
   <meta charset="utf-8">
   <title>Poke Item Search</title>
-  <meta name="description" content="Poke Item Search Engine">
+  <meta name="description" content="Pokemon Search Engine">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Poke Item Search</h1>
+  <h1>Pokemon Search</h1>
   <h5>Items Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo doloremque molestias veniam mollitia nam? Cum rerum voluptas sunt sequi vitae et, doloremque nobis culpa, eos nemo molestiae incidunt, ad minima.</h5>
-  <form action="." method="GET">
-      <label>
-          Search for any items, including food etc:
-          <input type="text" name="id">
+  <form action="." method="GET" class="pokemon-form">
+          <input type="text" name="submit-pokemon" placeholder="Search for any Pokemon to find details about type, etc.">
           <button type="submit">Search</button>
-      </label>
   </form>
-  <h2 class="searched-items"></h2>
-  <div class="items-container"></div>
+  <div class="pokemon-container">
+    <h2 class="searched-pokemon"></h2>
+  </div>
+  <div class ="result"></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
 </body>
